@@ -4,9 +4,13 @@ class TodolistsController < ApplicationController
   end
   
   def create
-    book = Book.new(book_params)
-    book.save
-    redirect_to '/index'
+    @book = Book.new(content: params[:content])
+    if @book.save
+      flash[:notice] = "Book was successfully created."
+      redirect_to '/books'
+    else
+      render("/books")
+    end
   end
   
   private
