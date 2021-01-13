@@ -29,7 +29,7 @@
 
 <h2>New book</h2>
 <%= form_with(model: @book, local: true) do |form| %>
- 
+
   <% if @book.errors.any? %>
     <div class="error_explanation">
       <h3><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h3>
@@ -41,17 +41,17 @@
       </ul>
     </div>
   <% end %>
-  
+
   <div class="field">
     <h4>Title</h4>
     <%= form.text_field :title %>
 
     <h4>Body</h4>
     <%=form.text_area :body %><br>
-    
+
   </div>
 
-  
+
 
   <%= form.submit 'Create Book' %>
 <% end %>
