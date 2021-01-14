@@ -18,7 +18,7 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all
+    @books = Book.all.order(updated_at: :asc)
     @book = Book.new
   end
 
